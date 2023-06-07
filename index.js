@@ -13,6 +13,14 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/about", (req, res) => {
+	res.sendFile(path.join(__dirname, "views", "html", "about.html"), (err) => {
+	  if (err) {
+		console.log(err);
+	  }
+	});
+  });
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`);
 });
